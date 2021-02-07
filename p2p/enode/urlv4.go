@@ -135,7 +135,7 @@ func parseComplete(rawurl string) (*Node, error) {
 		ip = ipv4
 	}
 	// Parse the port numbers.
-	if tcpPort, err = strconv.ParseUint(port, 10, 16); err != nil {
+	if tcpPort, err = strconv.ParseUint(u.Port(), 10, 16); err != nil {
 		return nil, errors.New("invalid port")
 	}
 	udpPort = tcpPort
